@@ -15,6 +15,9 @@ class ChatRoomViewController: UIViewController {
     var messages = [Messages]()
     var user:Users?
     var chatroom:ChatRoom?
+    var changeColor = ChangeColor()
+    var gradientLayer = CAGradientLayer()
+    
    
     @IBOutlet weak var chatRoomTableView: UITableView!
     private lazy var chatInputAccessoryView:ChatInputAccessoryView = {
@@ -31,10 +34,15 @@ class ChatRoomViewController: UIViewController {
         chatRoomTableView.delegate = self
         chatRoomTableView.dataSource = self
         chatRoomTableView.register(UINib(nibName: "ChatRoomTableViewCell", bundle: nil), forCellReuseIdentifier: "cellId")
-        chatRoomTableView.backgroundColor = .rgb(red: 118, green: 140, blue: 180)
+        chatRoomTableView.backgroundColor = .clear
         chatRoomTableView.tableFooterView = UIView()
         chatRoomTableView.contentInset = .init(top: 0, left: 0, bottom: 60, right: 0)
         chatRoomTableView.scrollIndicatorInsets = .init(top: 0, left: 0, bottom: 60, right: 0)
+        gradientLayer = changeColor.changeColor(topR:0.27,topG:0.27,topB:0.56,topAlpha:0.6,
+        bottomR:0.14,bottomG:0.64,bottomB:0.56,bottomAlpha:0.34)
+               
+               gradientLayer.frame = view.bounds
+               view.layer.insertSublayer(gradientLayer, at: 0)
         fetchMessages()
         
     }

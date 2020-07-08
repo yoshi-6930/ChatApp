@@ -12,6 +12,7 @@ target 'ChatApp02' do
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
   pod 'Nuke'
+  pod 'SDWebImage'
 
 
 end

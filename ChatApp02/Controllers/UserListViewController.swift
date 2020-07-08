@@ -16,13 +16,24 @@ class UserListViewController: UIViewController {
     private var users = [Users]()
     @IBOutlet weak var chatButton: UIButton!
     @IBOutlet weak var userListTableView: UITableView!
+    
+    var changeColor = ChangeColor()
+    var gradientLayer = CAGradientLayer()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        gradientLayer = changeColor.changeColor(topR:0.27,topG:0.27,topB:0.56,topAlpha:0.6,
+        bottomR:0.14,bottomG:0.64,bottomB:0.56,bottomAlpha:0.34)
+        
+        gradientLayer.frame = view.bounds //viewの画面全体
+        view.layer.insertSublayer(gradientLayer, at: 0)
 
         userListTableView.tableFooterView = UIView()
         userListTableView.delegate = self
         userListTableView.dataSource = self
-        navigationController?.navigationBar.barTintColor = .rgb(red: 39, green: 49, blue: 69)
+        navigationController?.navigationBar.barTintColor = .rgb(red: 50, green: 60, blue: 80)
         chatButton.layer.cornerRadius = 12
         chatButton.isEnabled = false
         fetchUserInfoFromFirestore()

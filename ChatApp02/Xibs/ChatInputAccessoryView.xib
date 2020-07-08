@@ -31,13 +31,13 @@
                         <constraint firstAttribute="width" constant="40" id="erb-UN-mx9"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                    <state key="normal" title="Button" image="paperplane" catalog="system"/>
+                    <state key="normal" image="paperplane" catalog="system"/>
                     <connections>
                         <action selector="tappedSendButton:" destination="-1" eventType="touchUpInside" id="39y-Ok-aFk"/>
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <color key="backgroundColor" red="0.19607843137254902" green="0.23529411764705882" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="D8q-58-skl" firstAttribute="leading" secondItem="I85-NZ-d7Q" secondAttribute="trailing" constant="20" id="0SB-P2-a1u"/>
                 <constraint firstItem="Sou-Mc-xSq" firstAttribute="bottom" secondItem="I85-NZ-d7Q" secondAttribute="bottom" constant="20" id="23n-Gb-Mhf"/>

@@ -15,7 +15,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="363" height="88"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple" translatesAutoresizingMaskIntoConstraints="NO" id="udc-PY-7Mq">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="udc-PY-7Mq">
                         <rect key="frame" x="8" y="14" width="60" height="60"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="udc-PY-7Mq" secondAttribute="height" multiplier="1:1" id="vpq-Wk-kJ6"/>
@@ -40,7 +40,7 @@
                     </label>
                     <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PlQ-Pg-w3j">
                         <rect key="frame" x="133" y="15" width="220" height="58"/>
-                        <color key="backgroundColor" red="0.66464765479999999" green="1" blue="0.48760386169999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.76862745098039209" green="0.98431372549019602" blue="0.42745098039215684" alpha="0.78847388698630139" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="220" id="mj4-Fh-Fa8"/>
                         </constraints>
@@ -85,7 +85,4 @@
             <point key="canvasLocation" x="-7" y="-240"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="apple" width="128" height="128"/>
-    </resources>
 </document>

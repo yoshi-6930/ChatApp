@@ -12,16 +12,18 @@ import UIKit
 import Firebase
 import Nuke
 
-protocol ProfileInfomationdelegate:class {
-    func setUpProfile(user:Users)
-}
+//protocol ProfileInfomationdelegate:class {
+//    func setUpProfile(user:Users)
+//}
 
 class ChatListViewController: UIViewController {
 
     var chatRoomListner:ListenerRegistration?
     var chatrooms = [ChatRoom]()
+    var changeColor = ChangeColor()
+       var gradientLayer = CAGradientLayer()
     
-    weak var delegate:ProfileInfomationdelegate?
+//    weak var delegate:ProfileInfomationdelegate?
    
    private var user:Users?{
         didSet{
@@ -37,15 +39,16 @@ class ChatListViewController: UIViewController {
         setUpViews()
         confirmLoginUser()
         
-        fetchChatroomInfoFromFirestore()
+        
         
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
        fetchLoginUser()
-        if let user = self.user{
-        delegate?.setUpProfile(user: user)
-        }
+        fetchChatroomInfoFromFirestore()
+//        if let user = self.user{
+//        delegate?.setUpProfile(user: user)
+//        }
     }
     
     func fetchChatroomInfoFromFirestore(){
@@ -76,7 +79,7 @@ class ChatListViewController: UIViewController {
         let dic = documentChange.document.data()
         let chatroom = ChatRoom(dic: dic)
          chatroom.documentId = documentChange.document.documentID
-        //membersから自分以外のユーザーの情報を取得しchatroom.partnerUserに代入
+        
         guard let uid = Auth.auth().currentUser?.uid else { return }
         //自分のuidが含まれているチャットルーム情報のみしゅとく
         let isContain = chatroom.members.contains(uid)
@@ -123,16 +126,21 @@ class ChatListViewController: UIViewController {
     private func setUpViews(){
         chatListTableView.delegate = self
         chatListTableView.dataSource = self
-        navigationController?.navigationBar.barTintColor = .rgb(red: 39, green: 49, blue: 69)
+        navigationController?.navigationBar.barTintColor = .rgb(red: 50, green: 60, blue: 80)
         
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-        chatListTableView.tableFooterView = UIView()
+//        chatListTableView.tableFooterView = UIView()
         let rightBarButton = UIBarButtonItem(title: "新規チャット", style: .plain, target: self, action: #selector(tappedNavRightBarButton))
         let logoutButton = UIBarButtonItem(title: "ログアウト", style: .plain, target: self, action: #selector(tappedLogoutButton))
         navigationItem.leftBarButtonItem = logoutButton
         navigationItem.rightBarButtonItem = rightBarButton
         navigationItem.rightBarButtonItem?.tintColor = .white
         navigationItem.leftBarButtonItem?.tintColor = .white
+        gradientLayer = changeColor.changeColor(topR:0.27,topG:0.27,topB:0.56,topAlpha:0.6,
+                                                              bottomR:0.14,bottomG:0.64,bottomB:0.56,bottomAlpha:0.34)
+                      
+                      gradientLayer.frame = view.bounds
+                      view.layer.insertSublayer(gradientLayer, at: 0)
     }
     @objc private func tappedLogoutButton(){
         do {

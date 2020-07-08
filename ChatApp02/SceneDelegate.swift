@@ -10,27 +10,60 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
-var window: UIWindow?
-
+//var window: UIWindow?
+    var window: UIWindow?
+    
 
 func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     
-    
+   var vcs: [UIViewController] = []
     
     let window = UIWindow(windowScene: scene as! UIWindowScene)
-    self.window = window
-    window.makeKeyAndVisible()
-    
+       self.window = window
+       window.makeKeyAndVisible()
+   
+     // 1st vc
+   
+//
+//           // 2nd vc
+//           let vc: UIViewController = ChatListViewController()
     let storyboard = UIStoryboard(name: "ChatList", bundle: nil)
-    let chatListViewController = storyboard.instantiateViewController(identifier: "ChatListViewController")
+       let chatListViewController = storyboard.instantiateViewController(identifier: "ChatListViewController")
     let nav = UINavigationController(rootViewController: chatListViewController)
+           nav.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
+           vcs.append(nav)
     
-    window.rootViewController = nav
+    let pStoryboard = UIStoryboard(name: "Profile", bundle: nil)
+    
+    let profileVC = pStoryboard.instantiateViewController(withIdentifier: "ProfileViewController")
+    let nav2 = UINavigationController(rootViewController: profileVC)
+    
+    nav2.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 2)
+    vcs.append(nav2)
+   let tabc: UITabBarController = UITabBarController(nibName: nil, bundle: Bundle.main)
+                 tabc.setViewControllers(vcs, animated: true)
+                 window.rootViewController = tabc
+
+          
+            
+    
+     guard let _ = (scene as? UIWindowScene) else { return }
+    
+   
+
+//    let storyboard = UIStoryboard(name: "ChatList", bundle: nil)
+//    let chatListViewController = storyboard.instantiateViewController(identifier: "ChatListViewController")
+//
+//    let nav = UINavigationController(rootViewController: chatListViewController)
+   
+
+    
+
+    }
     
     
     
-    guard let _ = (scene as? UIWindowScene) else { return }
-}
+    
 
 
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -35,6 +35,7 @@
 		AD9D2DD824B5898000844A46 /* ChatInputAccessorryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9D2DD724B5898000844A46 /* ChatInputAccessorryView.swift */; };
 		AD9D2DDA24B5899C00844A46 /* ChatRoomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD9D2DD924B5899C00844A46 /* ChatRoomTableViewCell.xib */; };
 		AD9D2DDC24B589AF00844A46 /* ChatInputAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD9D2DDB24B589AF00844A46 /* ChatInputAccessoryView.xib */; };
+		AD9D2DE024B5D71800844A46 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD9D2DDF24B5D71800844A46 /* Profile.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		AD9D2DD724B5898000844A46 /* ChatInputAccessorryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInputAccessorryView.swift; sourceTree = "<group>"; };
 		AD9D2DD924B5899C00844A46 /* ChatRoomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatRoomTableViewCell.xib; sourceTree = "<group>"; };
 		AD9D2DDB24B589AF00844A46 /* ChatInputAccessoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatInputAccessoryView.xib; sourceTree = "<group>"; };
+		AD9D2DDF24B5D71800844A46 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				AD9D2DB924B5818500844A46 /* ChatList.storyboard */,
 				AD9D2DBB24B5819000844A46 /* ChatRoom.storyboard */,
 				AD9D2DBD24B5819D00844A46 /* UserList.storyboard */,
+				AD9D2DDF24B5D71800844A46 /* Profile.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				AD9D2DA424B5807400844A46 /* LaunchScreen.storyboard in Resources */,
 				AD9D2DA124B5807400844A46 /* Assets.xcassets in Resources */,
 				AD9D2DBC24B5819000844A46 /* ChatRoom.storyboard in Resources */,
+				AD9D2DE024B5D71800844A46 /* Profile.storyboard in Resources */,
 				AD9D2DB524B5814A00844A46 /* SignUp.storyboard in Resources */,
 				AD9D2DBE24B5819D00844A46 /* UserList.storyboard in Resources */,
 				AD9D2DB724B5815800844A46 /* Login.storyboard in Resources */,

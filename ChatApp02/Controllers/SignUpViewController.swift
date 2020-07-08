@@ -106,7 +106,6 @@ class SignUpViewController: UIViewController {
                 "username":username,
                 "uid":uid,
                 "createdAt":Timestamp(),
-                "updatedAt":"",
                 "email":email,
                 "profileImageUrl": profileImageUrl
                 ] as [String : Any]

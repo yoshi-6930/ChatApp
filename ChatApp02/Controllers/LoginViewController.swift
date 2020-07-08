@@ -35,11 +35,11 @@ class LoginViewController: UIViewController {
         imageView.layer.cornerRadius = 80
         LoginButton.layer.cornerRadius = 13
         
-        //viewdidloadで以下を呼ぶ(例)
+       
         gradientLayer = changeColor.changeColor(topR:0.27,topG:0.53,topB:0.56,topAlpha:1.0,
                                                 bottomR:0.84,bottomG:0.54,bottomB:0.56,bottomAlpha:0.74)
         
-        gradientLayer.frame = view.bounds //viewの画面全体
+        gradientLayer.frame = view.bounds
         view.layer.insertSublayer(gradientLayer, at: 0)
 
     }
@@ -71,10 +71,10 @@ class LoginViewController: UIViewController {
             if let err = err{
                 print("ログインに失敗しました\(err)")
             }
-            let nav = self.presentingViewController as! UINavigationController
-            let chatListVC = nav.viewControllers[nav.viewControllers.count - 1] as! ChatListViewController
-            chatListVC.fetchChatroomInfoFromFirestore()
-            
+//           let storyboard = UIStoryboard(name: "ChatList", bundle: nil)
+//           let chatListVC = storyboard.instantiateViewController(identifier: "ChatListViewController") as! ChatListViewController
+//            chatListVC.fetchChatroomInfoFromFirestore()
+//            
             self.dismiss(animated: true, completion: nil)
         }
         
