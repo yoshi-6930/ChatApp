@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatInputAccessoryView" customModule="ChatApp02" customModuleProvider="target">
+            <connections>
+                <outlet property="chatTextView" destination="I85-NZ-d7Q" id="d40-i9-pZP"/>
+                <outlet property="sendButton" destination="D8q-58-skl" id="XCw-qS-mCY"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="y6b-SU-oEQ">
+            <rect key="frame" x="0.0" y="0.0" width="323" height="79"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="メッセージ" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="I85-NZ-d7Q">
+                    <rect key="frame" x="10" y="10" width="243" height="49"/>
+                    <color key="backgroundColor" red="0.94117647059999998" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8q-58-skl">
+                    <rect key="frame" x="273" y="20.5" width="40" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="erb-UN-mx9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                    <state key="normal" title="Button" image="paperplane" catalog="system"/>
+                    <connections>
+                        <action selector="tappedSendButton:" destination="-1" eventType="touchUpInside" id="39y-Ok-aFk"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="D8q-58-skl" firstAttribute="leading" secondItem="I85-NZ-d7Q" secondAttribute="trailing" constant="20" id="0SB-P2-a1u"/>
+                <constraint firstItem="Sou-Mc-xSq" firstAttribute="bottom" secondItem="I85-NZ-d7Q" secondAttribute="bottom" constant="20" id="23n-Gb-Mhf"/>
+                <constraint firstAttribute="trailing" secondItem="D8q-58-skl" secondAttribute="trailing" constant="10" id="GsX-XG-yXQ"/>
+                <constraint firstItem="I85-NZ-d7Q" firstAttribute="leading" secondItem="Sou-Mc-xSq" secondAttribute="leading" constant="10" id="IkB-cw-KKR"/>
+                <constraint firstItem="I85-NZ-d7Q" firstAttribute="top" secondItem="y6b-SU-oEQ" secondAttribute="top" constant="10" id="bF1-yN-JK8"/>
+                <constraint firstItem="D8q-58-skl" firstAttribute="centerY" secondItem="I85-NZ-d7Q" secondAttribute="centerY" id="dcV-5i-nP9"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Sou-Mc-xSq"/>
+            <point key="canvasLocation" x="-7.9710144927536239" y="-45.200892857142854"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="paperplane" catalog="system" width="128" height="121"/>
+    </resources>
+</document>
