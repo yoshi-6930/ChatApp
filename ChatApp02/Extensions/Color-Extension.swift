@@ -23,7 +23,7 @@ class ChangeColor{
       func changeColor(topR:CGFloat,topG:CGFloat,topB:CGFloat,topAlpha:CGFloat,
                        bottomR:CGFloat,bottomG:CGFloat,bottomB:CGFloat,bottomAlpha:CGFloat)->CAGradientLayer{
           
-          //グラデーションの開始色
+          
           let topColor = UIColor(red: topR, green: topG, blue: topB, alpha: topAlpha)
           
           let bottomColor = UIColor(red: bottomR, green:bottomG , blue: bottomB, alpha: bottomAlpha)
@@ -37,16 +37,3 @@ class ChangeColor{
       }
   }
 
-extension UIImage {
-    public convenience init(url: String) {
-        let url = URL(string: url)
-        do {
-            let data = try Data(contentsOf: url!)
-            self.init(data: data)!
-            return
-        } catch let err {
-            print("Error : \(err.localizedDescription)")
-        }
-        self.init()
-    }
-}

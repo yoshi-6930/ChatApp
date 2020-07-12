@@ -16,14 +16,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="udc-PY-7Mq">
-                        <rect key="frame" x="8" y="14" width="60" height="60"/>
+                        <rect key="frame" x="8" y="19" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="udc-PY-7Mq" secondAttribute="height" multiplier="1:1" id="vpq-Wk-kJ6"/>
-                            <constraint firstAttribute="width" constant="60" id="zdU-Js-yw7"/>
+                            <constraint firstAttribute="width" constant="50" id="zdU-Js-yw7"/>
                         </constraints>
                     </imageView>
                     <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="メッセージ" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnr-gK-9Zx">
-                        <rect key="frame" x="78" y="15" width="220" height="58"/>
+                        <rect key="frame" x="68" y="15" width="220" height="58"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="220" id="gYg-y1-cwH"/>
@@ -33,7 +33,7 @@
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3An-ki-Xa6">
-                        <rect key="frame" x="313" y="58" width="39" height="18"/>
+                        <rect key="frame" x="303" y="58" width="49" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>

@@ -10,9 +10,11 @@
 
 import UIKit
 import Firebase
+import PKHUD
+
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -22,11 +24,11 @@ class LoginViewController: UIViewController {
     var changeColor = ChangeColor()
     var gradientLayer = CAGradientLayer()
     
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         navigationController?.navigationBar.isHidden = true
         LoginButton.isEnabled = false
         LoginButton.backgroundColor = .rgb(red: 100, green: 100, blue: 100)
@@ -35,55 +37,57 @@ class LoginViewController: UIViewController {
         imageView.layer.cornerRadius = 80
         LoginButton.layer.cornerRadius = 13
         
-       
+        
         gradientLayer = changeColor.changeColor(topR:0.27,topG:0.53,topB:0.56,topAlpha:1.0,
                                                 bottomR:0.84,bottomG:0.54,bottomB:0.56,bottomAlpha:0.74)
         
         gradientLayer.frame = view.bounds
         view.layer.insertSublayer(gradientLayer, at: 0)
-
+        
     }
     
     func alertUserLoginError(message:String = "正確に入力して下さい") {
-           let alert = UIAlertController(title: "エラー",
-                                         message: message,
-                                         preferredStyle: .alert)
-           alert.addAction(UIAlertAction(title: "キャンセル",
-                                         style: .cancel,
-                                         handler: nil))
-           
-           present(alert, animated: true, completion: nil)
-       }
+        let alert = UIAlertController(title: "エラー",
+                                      message: message,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "キャンセル",
+                                      style: .cancel,
+                                      handler: nil))
+        
+        present(alert, animated: true, completion: nil)
+    }
     
-
     
-
+    
+    
     @IBAction func tappedLoginButton(_ sender: Any) {
         guard let email = emailTextField.text,let password = passwordTextField.text else {
-             alertUserLoginError()
+            alertUserLoginError()
             return
         }
         guard password.count >= 6 else {
-             alertUserLoginError(message: "パスワードを正確に入力して下さい")
+            alertUserLoginError(message: "パスワードを正確に入力して下さい")
             return
         }
+        HUD.show(.progress)
         Auth.auth().signIn(withEmail: email, password: password) { (res, err) in
             if let err = err{
                 print("ログインに失敗しました\(err)")
+                HUD.hide()
+                return
             }
-//           let storyboard = UIStoryboard(name: "ChatList", bundle: nil)
-//           let chatListVC = storyboard.instantiateViewController(identifier: "ChatListViewController") as! ChatListViewController
-//            chatListVC.fetchChatroomInfoFromFirestore()
-//            
+            HUD.hide()
             self.dismiss(animated: true, completion: nil)
         }
         
     }
     @IBAction func alreadyHaveAccountButton(_ sender: Any) {
-//        let storyboard = UIStoryboard(name: "SignUp", bundle: nil)
-//
-//        let signupVC = storyboard.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+        
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }
 
@@ -101,4 +105,14 @@ extension LoginViewController:UITextFieldDelegate{
         }
         
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+          
+           if emailTextField.isEditing == true {
+               passwordTextField.becomeFirstResponder()
+           }else{
+               tappedLoginButton(self)
+               textField.resignFirstResponder()
+           }
+           return true
+       }
 }

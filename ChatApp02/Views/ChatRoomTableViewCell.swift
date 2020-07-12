@@ -24,7 +24,7 @@ class ChatRoomTableViewCell: UITableViewCell {
     @IBOutlet weak var partnerDateLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        partnerImageView.layer.cornerRadius = 35
+        partnerImageView.layer.cornerRadius = 30
         partnerMessageTextView.layer.cornerRadius = 15
         messageTextView.layer.cornerRadius = 15
        

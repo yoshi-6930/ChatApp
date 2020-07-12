@@ -19,18 +19,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="メッセージ" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="I85-NZ-d7Q">
-                    <rect key="frame" x="10" y="10" width="243" height="49"/>
+                    <rect key="frame" x="10" y="10" width="233" height="49"/>
                     <color key="backgroundColor" red="0.94117647059999998" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8q-58-skl">
-                    <rect key="frame" x="273" y="20.5" width="40" height="28"/>
+                    <rect key="frame" x="263" y="20.5" width="50" height="28"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="40" id="erb-UN-mx9"/>
+                        <constraint firstAttribute="width" constant="50" id="erb-UN-mx9"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" image="paperplane" catalog="system"/>
                     <connections>
                         <action selector="tappedSendButton:" destination="-1" eventType="touchUpInside" id="39y-Ok-aFk"/>

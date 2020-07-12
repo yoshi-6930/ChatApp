@@ -15,7 +15,7 @@ protocol ChatInputAccessoryViewDelegate:class {
 
 class ChatInputAccessoryView: UIView {
     
-  
+    
     @IBOutlet weak var chatTextView: UITextView!
     @IBOutlet weak var sendButton: UIButton!
     
@@ -36,7 +36,7 @@ class ChatInputAccessoryView: UIView {
         view.autoresizingMask = [.flexibleHeight,.flexibleWidth]
         self.addSubview(view)
         
-       
+        
     }
     
     private func setUpViews(){

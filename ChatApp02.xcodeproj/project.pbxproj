@@ -36,6 +36,7 @@
 		AD9D2DDA24B5899C00844A46 /* ChatRoomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD9D2DD924B5899C00844A46 /* ChatRoomTableViewCell.xib */; };
 		AD9D2DDC24B589AF00844A46 /* ChatInputAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD9D2DDB24B589AF00844A46 /* ChatInputAccessoryView.xib */; };
 		AD9D2DE024B5D71800844A46 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD9D2DDF24B5D71800844A46 /* Profile.storyboard */; };
+		AD9D2DE224B60B6E00844A46 /* Image-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9D2DE124B60B6E00844A46 /* Image-Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		AD9D2DD924B5899C00844A46 /* ChatRoomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatRoomTableViewCell.xib; sourceTree = "<group>"; };
 		AD9D2DDB24B589AF00844A46 /* ChatInputAccessoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatInputAccessoryView.xib; sourceTree = "<group>"; };
 		AD9D2DDF24B5D71800844A46 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		AD9D2DE124B60B6E00844A46 /* Image-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image-Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				AD9D2DD124B5858600844A46 /* Color-Extension.swift */,
+				AD9D2DE124B60B6E00844A46 /* Image-Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				AD9D2D9724B5806D00844A46 /* SceneDelegate.swift in Sources */,
 				AD9D2DC024B581CF00844A46 /* SignUpViewController.swift in Sources */,
 				AD9D2DCC24B584CD00844A46 /* Users.swift in Sources */,
+				AD9D2DE224B60B6E00844A46 /* Image-Extension.swift in Sources */,
 				AD9D2DD624B5896A00844A46 /* ChatRoomTableViewCell.swift in Sources */,
 				AD9D2DD224B5858600844A46 /* Color-Extension.swift in Sources */,
 			);

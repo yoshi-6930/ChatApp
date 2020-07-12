@@ -11,55 +11,46 @@
 import UIKit
 import Firebase
 import Nuke
+import PKHUD
 
-//protocol ProfileInfomationdelegate:class {
-//    func setUpProfile(user:Users)
-//}
+
 
 class ChatListViewController: UIViewController {
-
+    
     var chatRoomListner:ListenerRegistration?
     var chatrooms = [ChatRoom]()
     var changeColor = ChangeColor()
-       var gradientLayer = CAGradientLayer()
+    var gradientLayer = CAGradientLayer()
+
+    private var user:Users?
     
-//    weak var delegate:ProfileInfomationdelegate?
-   
-   private var user:Users?{
-        didSet{
-            guard let user = user else { return }
-            title = user.username
-        }
-    }
     
     @IBOutlet weak var chatListTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setUpViews()
         confirmLoginUser()
-        
-        
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-       fetchLoginUser()
+        fetchLoginUser()
         fetchChatroomInfoFromFirestore()
-//        if let user = self.user{
-//        delegate?.setUpProfile(user: user)
-//        }
+        
     }
     
     func fetchChatroomInfoFromFirestore(){
         chatRoomListner?.remove()
         chatrooms.removeAll()
         chatListTableView.reloadData()
+        HUD.show(.progress)
         
-       chatRoomListner = Firestore.firestore().collection("chatRooms").addSnapshotListener { (snapshots, err) in
-           
+        
+        chatRoomListner = Firestore.firestore().collection("chatRooms").addSnapshotListener { (snapshots, err) in
+            
             if let err = err{
                 print("チャットルーム情報の取得に失敗しました\(err)")
+                HUD.hide()
                 return
             }
             snapshots?.documentChanges.forEach({ (documentChange) in
@@ -78,10 +69,10 @@ class ChatListViewController: UIViewController {
     private func handleAddedDocumentChange(documentChange:DocumentChange){
         let dic = documentChange.document.data()
         let chatroom = ChatRoom(dic: dic)
-         chatroom.documentId = documentChange.document.documentID
+        chatroom.documentId = documentChange.document.documentID
         
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        //自分のuidが含まれているチャットルーム情報のみしゅとく
+        
         let isContain = chatroom.members.contains(uid)
         if !isContain { return }
         chatroom.members.forEach { (memberUid) in
@@ -89,11 +80,11 @@ class ChatListViewController: UIViewController {
                 Firestore.firestore().collection("users").document(memberUid).getDocument { (userSnapshot, err) in
                     if let err = err{
                         print("ユーザー情報の取得に失敗しました\(err)")
+                        HUD.hide()
                         return
                     }
                     guard let dic = userSnapshot?.data() else { return }
                     let user = Users(dic: dic)
-//                    user.uid = documentChange.document.documentID //念の為
                     chatroom.partnerUser = user
                     
                     guard let chatRoomId = chatroom.documentId else { return }
@@ -102,22 +93,25 @@ class ChatListViewController: UIViewController {
                     if latestMessageId == ""{
                         self.chatrooms.append(chatroom)
                         self.chatListTableView.reloadData()
+                        HUD.hide()
                         return
                     }
-                        Firestore.firestore().collection("chatRooms").document(chatRoomId).collection("messages").document(latestMessageId).getDocument { (messageSnapshot, err) in
-                            if let err = err{
-                                print("最新情報の取得に失敗しました\(err)")
-                                return
-                            }
-                            guard let dic = messageSnapshot?.data() else { return }
-                            let message = Messages(dic: dic)
-                            chatroom.latestMessage = message
-                
+                    Firestore.firestore().collection("chatRooms").document(chatRoomId).collection("messages").document(latestMessageId).getDocument { (messageSnapshot, err) in
+                        if let err = err{
+                            print("最新情報の取得に失敗しました\(err)")
+                            HUD.hide()
+                            return
+                        }
+                        guard let dic = messageSnapshot?.data() else { return }
+                        let message = Messages(dic: dic)
+                        chatroom.latestMessage = message
+                        
                         
                         self.chatrooms.append(chatroom)
                         self.chatListTableView.reloadData()
+                        HUD.hide()
                     }
-                   
+                    
                 }
             }
         }
@@ -129,7 +123,7 @@ class ChatListViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = .rgb(red: 50, green: 60, blue: 80)
         
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-//        chatListTableView.tableFooterView = UIView()
+        self.title = "トーク"
         let rightBarButton = UIBarButtonItem(title: "新規チャット", style: .plain, target: self, action: #selector(tappedNavRightBarButton))
         let logoutButton = UIBarButtonItem(title: "ログアウト", style: .plain, target: self, action: #selector(tappedLogoutButton))
         navigationItem.leftBarButtonItem = logoutButton
@@ -137,10 +131,10 @@ class ChatListViewController: UIViewController {
         navigationItem.rightBarButtonItem?.tintColor = .white
         navigationItem.leftBarButtonItem?.tintColor = .white
         gradientLayer = changeColor.changeColor(topR:0.27,topG:0.27,topB:0.56,topAlpha:0.6,
-                                                              bottomR:0.14,bottomG:0.64,bottomB:0.56,bottomAlpha:0.34)
-                      
-                      gradientLayer.frame = view.bounds
-                      view.layer.insertSublayer(gradientLayer, at: 0)
+                                                bottomR:0.14,bottomG:0.64,bottomB:0.56,bottomAlpha:0.34)
+        
+        gradientLayer.frame = view.bounds
+        view.layer.insertSublayer(gradientLayer, at: 0)
     }
     @objc private func tappedLogoutButton(){
         do {
@@ -149,7 +143,7 @@ class ChatListViewController: UIViewController {
         } catch  {
             print(error)
         }
-       
+        
     }
     
     
@@ -161,10 +155,10 @@ class ChatListViewController: UIViewController {
         let nav = UINavigationController(rootViewController: userListVC)
         self.present(nav, animated: true, completion: nil)
     }
-   
+    
     private func confirmLoginUser(){
         if Auth.auth().currentUser?.uid == nil{
-         sendToSignupVC()
+            sendToSignupVC()
         }
         
     }
@@ -187,8 +181,8 @@ class ChatListViewController: UIViewController {
             self.user = user
         }
     }
-  
-
+    
+    
 }
 extension ChatListViewController:UITableViewDelegate,UITableViewDataSource{
     
@@ -212,8 +206,6 @@ extension ChatListViewController:UITableViewDelegate,UITableViewDataSource{
         chatRoomVC.user = user
         chatRoomVC.chatroom = chatrooms[indexPath.row]
         navigationController?.pushViewController(chatRoomVC, animated: true)
-        //        chatRoomVC.chatroom = chatrooms[indexPath.row]
-        //        chatRoomVC.user = user
         
     }
     
@@ -235,14 +227,6 @@ class ChatListTableViewCell:UITableViewCell{
         }
     }
     
-//    var user:Users?{
-//        didSet{
-//            guard let user = user else { return }
-//            partnerNameLabel.text = user.username
-//            latestMessageLabel.text = user.email
-//            dateLabel.text = dateFormatterForDate(date: user.createdAt.dateValue())
-//        }
-//    }
     
     @IBOutlet weak var partnerImageView: UIImageView!
     @IBOutlet weak var latestMessageLabel: UILabel!
@@ -251,7 +235,7 @@ class ChatListTableViewCell:UITableViewCell{
     @IBOutlet weak var dateLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        partnerImageView.layer.cornerRadius = 35
+        partnerImageView.layer.cornerRadius = 30
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

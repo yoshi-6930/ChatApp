@@ -11,7 +11,7 @@ import Firebase
 import Nuke
 
 class UserListViewController: UIViewController {
-
+    
     private var selectedUser:Users?
     private var users = [Users]()
     @IBOutlet weak var chatButton: UIButton!
@@ -25,11 +25,11 @@ class UserListViewController: UIViewController {
         super.viewDidLoad()
         
         gradientLayer = changeColor.changeColor(topR:0.27,topG:0.27,topB:0.56,topAlpha:0.6,
-        bottomR:0.14,bottomG:0.64,bottomB:0.56,bottomAlpha:0.34)
+                                                bottomR:0.14,bottomG:0.64,bottomB:0.56,bottomAlpha:0.34)
         
-        gradientLayer.frame = view.bounds //viewの画面全体
+        gradientLayer.frame = view.bounds
         view.layer.insertSublayer(gradientLayer, at: 0)
-
+        
         userListTableView.tableFooterView = UIView()
         userListTableView.delegate = self
         userListTableView.dataSource = self
@@ -61,7 +61,7 @@ class UserListViewController: UIViewController {
         }
     }
     
-
+    
     
     
     @IBAction func startChatButton(_ sender: Any) {
@@ -111,9 +111,9 @@ class UserListTableViewCell: UITableViewCell {
             guard let user = user else { return }
             nameLabel.text = user.username
             if let url = URL(string:user.profileImageUrl){
-                 Nuke.loadImage(with: url, into: userImageView)
+                Nuke.loadImage(with: url, into: userImageView)
             }
-           
+            
             
             
         }
