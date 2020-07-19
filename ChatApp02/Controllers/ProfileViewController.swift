@@ -66,6 +66,7 @@ class ProfileViewController: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
         fetchLoginUserInfo()
+        usernameTextField.becomeFirstResponder()
     }
     
     
@@ -174,7 +175,7 @@ extension ProfileViewController:UITextFieldDelegate{
         let usernameIsEmpty = usernameTextField.text?.isEmpty ?? false
         if usernameIsEmpty{
             changeProfileButton.isEnabled = false
-            profileImageButton.backgroundColor = .rgb(red: 100, green: 100, blue: 100)
+            changeProfileButton.backgroundColor = .rgb(red: 100, green: 100, blue: 100)
         }else{
             changeProfileButton.isEnabled = true
             changeProfileButton.backgroundColor = .rgb(red: 35, green: 136, blue: 219)

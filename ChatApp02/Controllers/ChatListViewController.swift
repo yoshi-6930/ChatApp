@@ -58,9 +58,11 @@ class ChatListViewController: UIViewController {
                 documentChange .type{
                 case .added:
                     self.handleAddedDocumentChange(documentChange: documentChange)
+                    HUD.hide()
                     
                 case .modified,.removed:
                     print("ntd")
+                    HUD.hide()
                 }
             })
         }
