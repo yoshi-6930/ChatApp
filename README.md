@@ -1,5 +1,6 @@
 # ChatApp
-Swift×Firebaseで作成したチャットアプリです。
+Swift×Firebaseで作成した趣味で繋がるチャットアプリです。
+趣味を選択し、同じ趣味を持つユーザーとチャットを始めることが出来ます。
 DBはCloudFirestoreを用いています。
 ![21A7645C-68DB-4204-B9B1-C6844EC464B0_1_105_c](https://user-images.githubusercontent.com/63889721/87384348-754ee780-c5d6-11ea-91d1-c2d4433ef648.jpeg)
 ![414D332C-79AD-4FA8-8E99-7B610A38E0AB_1_105_c](https://user-images.githubusercontent.com/63889721/87384383-8dbf0200-c5d6-11ea-9f9d-c388887166db.jpeg)
