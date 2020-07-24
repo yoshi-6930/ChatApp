@@ -15,6 +15,7 @@ class Users {
     let profileImageUrl:String
     let createdAt:Timestamp
     let uid:String
+    let hobby:String
     
     
     
@@ -24,7 +25,7 @@ class Users {
         self.email = dic["email"] as? String ?? ""
         self.profileImageUrl = dic["profileImageUrl"] as? String ?? ""
         self.createdAt = dic["createdAt"] as? Timestamp ?? Timestamp()
-        
+        self.hobby = dic["hobby"] as? String ?? ""
     }
 }
 

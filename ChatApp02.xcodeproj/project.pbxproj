@@ -30,13 +30,15 @@
 		AD9D2DCE24B584DE00844A46 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9D2DCD24B584DE00844A46 /* ChatRoom.swift */; };
 		AD9D2DD024B584E900844A46 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9D2DCF24B584E900844A46 /* Messages.swift */; };
 		AD9D2DD224B5858600844A46 /* Color-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9D2DD124B5858600844A46 /* Color-Extension.swift */; };
-		AD9D2DD424B5880E00844A46 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD9D2DD324B5880E00844A46 /* GoogleService-Info.plist */; };
 		AD9D2DD624B5896A00844A46 /* ChatRoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9D2DD524B5896A00844A46 /* ChatRoomTableViewCell.swift */; };
 		AD9D2DD824B5898000844A46 /* ChatInputAccessorryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9D2DD724B5898000844A46 /* ChatInputAccessorryView.swift */; };
 		AD9D2DDA24B5899C00844A46 /* ChatRoomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD9D2DD924B5899C00844A46 /* ChatRoomTableViewCell.xib */; };
 		AD9D2DDC24B589AF00844A46 /* ChatInputAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD9D2DDB24B589AF00844A46 /* ChatInputAccessoryView.xib */; };
 		AD9D2DE024B5D71800844A46 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD9D2DDF24B5D71800844A46 /* Profile.storyboard */; };
 		AD9D2DE224B60B6E00844A46 /* Image-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9D2DE124B60B6E00844A46 /* Image-Extension.swift */; };
+		ADE1E04024C7F0AA00E0D97D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADE1E03F24C7F0AA00E0D97D /* GoogleService-Info.plist */; };
+		ADE1E04224C823D100E0D97D /* Hobby.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADE1E04124C823D100E0D97D /* Hobby.storyboard */; };
+		ADE1E04424C825A500E0D97D /* HobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE1E04324C825A500E0D97D /* HobbyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +53,6 @@
 		AD9D2D9E24B5806D00844A46 /* ChatApp02.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChatApp02.xcdatamodel; sourceTree = "<group>"; };
 		AD9D2DA024B5807400844A46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD9D2DA324B5807400844A46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		AD9D2DA524B5807400844A46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD9D2DB424B5814A00844A46 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		AD9D2DB624B5815800844A46 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		AD9D2DB924B5818500844A46 /* ChatList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatList.storyboard; sourceTree = "<group>"; };
@@ -67,13 +68,16 @@
 		AD9D2DCD24B584DE00844A46 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
 		AD9D2DCF24B584E900844A46 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		AD9D2DD124B5858600844A46 /* Color-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Extension.swift"; sourceTree = "<group>"; };
-		AD9D2DD324B5880E00844A46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AD9D2DD524B5896A00844A46 /* ChatRoomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomTableViewCell.swift; sourceTree = "<group>"; };
 		AD9D2DD724B5898000844A46 /* ChatInputAccessorryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInputAccessorryView.swift; sourceTree = "<group>"; };
 		AD9D2DD924B5899C00844A46 /* ChatRoomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatRoomTableViewCell.xib; sourceTree = "<group>"; };
 		AD9D2DDB24B589AF00844A46 /* ChatInputAccessoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatInputAccessoryView.xib; sourceTree = "<group>"; };
 		AD9D2DDF24B5D71800844A46 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		AD9D2DE124B60B6E00844A46 /* Image-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image-Extension.swift"; sourceTree = "<group>"; };
+		ADE1E03D24C7EC9900E0D97D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADE1E03F24C7F0AA00E0D97D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ADE1E04124C823D100E0D97D /* Hobby.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Hobby.storyboard; sourceTree = "<group>"; };
+		ADE1E04324C825A500E0D97D /* HobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,9 +142,9 @@
 				AD9D2D9A24B5806D00844A46 /* Main.storyboard */,
 				AD9D2DA024B5807400844A46 /* Assets.xcassets */,
 				AD9D2DA224B5807400844A46 /* LaunchScreen.storyboard */,
-				AD9D2DA524B5807400844A46 /* Info.plist */,
-				AD9D2DD324B5880E00844A46 /* GoogleService-Info.plist */,
 				AD9D2D9D24B5806D00844A46 /* ChatApp02.xcdatamodeld */,
+				ADE1E03D24C7EC9900E0D97D /* Info.plist */,
+				ADE1E03F24C7F0AA00E0D97D /* GoogleService-Info.plist */,
 			);
 			path = ChatApp02;
 			sourceTree = "<group>";
@@ -154,6 +158,7 @@
 				AD9D2DBB24B5819000844A46 /* ChatRoom.storyboard */,
 				AD9D2DBD24B5819D00844A46 /* UserList.storyboard */,
 				AD9D2DDF24B5D71800844A46 /* Profile.storyboard */,
+				ADE1E04124C823D100E0D97D /* Hobby.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 				AD9D2DC524B5820600844A46 /* ChatRoomViewController.swift */,
 				AD9D2DC724B5821D00844A46 /* UserListViewController.swift */,
 				AD9D2DC924B5822900844A46 /* ProfileViewController.swift */,
+				ADE1E04324C825A500E0D97D /* HobbyViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -237,7 +243,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = "Yoshiki Iwamoto";
 				TargetAttributes = {
 					AD9D2D9024B5806D00844A46 = {
@@ -272,6 +278,7 @@
 				AD9D2DDA24B5899C00844A46 /* ChatRoomTableViewCell.xib in Resources */,
 				AD9D2DBA24B5818500844A46 /* ChatList.storyboard in Resources */,
 				AD9D2DA424B5807400844A46 /* LaunchScreen.storyboard in Resources */,
+				ADE1E04224C823D100E0D97D /* Hobby.storyboard in Resources */,
 				AD9D2DA124B5807400844A46 /* Assets.xcassets in Resources */,
 				AD9D2DBC24B5819000844A46 /* ChatRoom.storyboard in Resources */,
 				AD9D2DE024B5D71800844A46 /* Profile.storyboard in Resources */,
@@ -279,7 +286,7 @@
 				AD9D2DBE24B5819D00844A46 /* UserList.storyboard in Resources */,
 				AD9D2DB724B5815800844A46 /* Login.storyboard in Resources */,
 				AD9D2D9C24B5806D00844A46 /* Main.storyboard in Resources */,
-				AD9D2DD424B5880E00844A46 /* GoogleService-Info.plist in Resources */,
+				ADE1E04024C7F0AA00E0D97D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +342,7 @@
 				AD9D2DC224B581E800844A46 /* LoginViewController.swift in Sources */,
 				AD9D2DD824B5898000844A46 /* ChatInputAccessorryView.swift in Sources */,
 				AD9D2D9924B5806D00844A46 /* ViewController.swift in Sources */,
+				ADE1E04424C825A500E0D97D /* HobbyViewController.swift in Sources */,
 				AD9D2DCA24B5822900844A46 /* ProfileViewController.swift in Sources */,
 				AD9D2D9F24B5806D00844A46 /* ChatApp02.xcdatamodeld in Sources */,
 				AD9D2DC624B5820600844A46 /* ChatRoomViewController.swift in Sources */,

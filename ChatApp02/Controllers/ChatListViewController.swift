@@ -28,7 +28,7 @@ class ChatListViewController: UIViewController {
     @IBOutlet weak var chatListTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        HUD.hide()
         setUpViews()
         confirmLoginUser()
     }
@@ -153,7 +153,8 @@ class ChatListViewController: UIViewController {
         
         let storyboard = UIStoryboard(name: "UserList", bundle: nil)
         
-        let userListVC = storyboard.instantiateViewController(withIdentifier: "UserListViewController")
+        let userListVC = storyboard.instantiateViewController(withIdentifier: "UserListViewController") as! UserListViewController
+        userListVC.myInfo = self.user
         let nav = UINavigationController(rootViewController: userListVC)
         self.present(nav, animated: true, completion: nil)
     }
@@ -175,12 +176,14 @@ class ChatListViewController: UIViewController {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         Firestore.firestore().collection("users").document(uid).getDocument { (snapshot, err) in
             if let err = err{
+                HUD.hide()
                 print("ログインユーザーの取得に失敗しました \(err)")
                 return
             }
             guard let dic = snapshot?.data() else { return }
             let user = Users(dic: dic)
             self.user = user
+            HUD.hide()
         }
     }
     

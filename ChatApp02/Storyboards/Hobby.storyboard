@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Hobby View Controller-->
+        <scene sceneID="qxs-3e-1Fe">
+            <objects>
+                <viewController storyboardIdentifier="HobbyViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HVR-7x-vG2" customClass="HobbyViewController" customModule="ChatApp02" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y0Q-Il-gzI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IXu-9F-jhf">
+                                <rect key="frame" x="0.0" y="64" width="414" height="450"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="450" id="Nhf-Cf-mX2"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ia8-VM-TTL">
+                                    <size key="itemSize" width="124" height="88"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellId" id="47K-YN-UVb" customClass="HobbyCollectionViewCell" customModule="ChatApp02" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="124" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2Vm-3C-n8h">
+                                            <rect key="frame" x="0.0" y="0.0" width="124" height="88"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="スポーツ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZp-2L-qab">
+                                                    <rect key="frame" x="0.0" y="10" width="124" height="68"/>
+                                                    <color key="backgroundColor" red="0.76862745099999996" green="0.98431372549999996" blue="0.42745098040000001" alpha="0.78847388699999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="BZp-2L-qab" secondAttribute="trailing" id="SL6-SM-kcO"/>
+                                                <constraint firstAttribute="bottom" secondItem="BZp-2L-qab" secondAttribute="bottom" constant="10" id="VVu-n4-rse"/>
+                                                <constraint firstItem="BZp-2L-qab" firstAttribute="top" secondItem="2Vm-3C-n8h" secondAttribute="top" constant="10" id="fEM-ah-OOG"/>
+                                                <constraint firstItem="BZp-2L-qab" firstAttribute="leading" secondItem="2Vm-3C-n8h" secondAttribute="leading" id="l8i-sp-hYE"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="124" height="88"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="thM-ut-PLi">
+                                <rect key="frame" x="107" y="575" width="200" height="50"/>
+                                <color key="backgroundColor" red="0.18228379750000001" green="0.66013820339999996" blue="0.5847836716" alpha="0.78847388699999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bE8-VG-ixF"/>
+                                    <constraint firstAttribute="width" constant="200" id="wfE-e0-x4J"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="趣味を決定"/>
+                                <connections>
+                                    <action selector="tappedDecide:" destination="HVR-7x-vG2" eventType="touchUpInside" id="6cz-Hs-fIR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="趣味を1つ選択して下さい" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lQ-Eh-FkI">
+                                <rect key="frame" x="108" y="534" width="198.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="IXu-9F-jhf" firstAttribute="leading" secondItem="92N-qF-uwP" secondAttribute="leading" id="9xD-eY-kaB"/>
+                            <constraint firstItem="IXu-9F-jhf" firstAttribute="top" secondItem="92N-qF-uwP" secondAttribute="top" constant="20" id="TfK-fb-t2L"/>
+                            <constraint firstItem="IXu-9F-jhf" firstAttribute="trailing" secondItem="92N-qF-uwP" secondAttribute="trailing" id="hDc-5w-JiV"/>
+                            <constraint firstItem="thM-ut-PLi" firstAttribute="centerX" secondItem="y0Q-Il-gzI" secondAttribute="centerX" id="hNQ-DK-gEt"/>
+                            <constraint firstItem="7lQ-Eh-FkI" firstAttribute="top" secondItem="IXu-9F-jhf" secondAttribute="bottom" constant="20" id="pAi-H3-RpM"/>
+                            <constraint firstItem="thM-ut-PLi" firstAttribute="top" secondItem="7lQ-Eh-FkI" secondAttribute="bottom" constant="20" id="qmQ-ti-PNQ"/>
+                            <constraint firstItem="7lQ-Eh-FkI" firstAttribute="centerX" secondItem="y0Q-Il-gzI" secondAttribute="centerX" id="vIY-ef-ySI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="92N-qF-uwP"/>
+                    </view>
+                    <connections>
+                        <outlet property="decideButton" destination="thM-ut-PLi" id="XMn-aB-GLY"/>
+                        <outlet property="hobbyCollectionView" destination="IXu-9F-jhf" id="XsS-k4-qhb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Nu-fv-gug" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="102.89855072463769" y="96.428571428571431"/>
+        </scene>
+    </scenes>
+</document>

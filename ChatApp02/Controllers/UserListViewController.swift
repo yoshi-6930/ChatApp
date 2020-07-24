@@ -12,6 +12,8 @@ import Nuke
 
 class UserListViewController: UIViewController {
     
+    var myInfo:Users?
+    
     private var selectedUser:Users?
     private var users = [Users]()
     @IBOutlet weak var chatButton: UIButton!
@@ -54,7 +56,10 @@ class UserListViewController: UIViewController {
                 if uid == snapshot.documentID{
                     return
                 }
-                self.users.append(user)
+                if self.myInfo?.hobby == user.hobby {
+                     self.users.append(user)
+                }
+               
                 self.userListTableView.reloadData()
                 
             })
@@ -86,7 +91,7 @@ class UserListViewController: UIViewController {
 
 extension UserListViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 100
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
@@ -112,6 +117,7 @@ class UserListTableViewCell: UITableViewCell {
             nameLabel.text = user.username
             if let url = URL(string:user.profileImageUrl){
                 Nuke.loadImage(with: url, into: userImageView)
+                hobbyLabel.text = user.hobby
             }
             
             
@@ -119,13 +125,17 @@ class UserListTableViewCell: UITableViewCell {
         }
     }
     
+    @IBOutlet weak var hobbyLabel: UILabel!
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         userImageView.layer.cornerRadius = 30
+         hobbyLabel.layer.cornerRadius = 12
+        hobbyLabel.clipsToBounds = true
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+       
     }
 }

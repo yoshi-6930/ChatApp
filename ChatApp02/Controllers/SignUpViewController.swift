@@ -11,6 +11,7 @@ class SignUpViewController: UIViewController {
     
     var changeColor = ChangeColor()
     var gradientLayer = CAGradientLayer()
+    var uid:String?
     
     @IBOutlet weak var profileImageButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
@@ -47,6 +48,7 @@ class SignUpViewController: UIViewController {
         
     }
     
+   
     
     @IBAction func profileImageTap(_ sender: Any) {
         let imagePickerController = UIImagePickerController()
@@ -106,13 +108,15 @@ class SignUpViewController: UIViewController {
             print("会員登録に成功しました")
             
             guard let uid = res?.user.uid else { return }
+            self.uid = uid
             guard let username = self.usernameTextField.text else { return }
             let docData = [
                 "username":username,
                 "uid":uid,
                 "createdAt":Timestamp(),
                 "email":email,
-                "profileImageUrl": profileImageUrl
+                "profileImageUrl": profileImageUrl,
+                "hobby":""
                 ] as [String : Any]
             Firestore.firestore().collection("users").document(uid).setData(docData) { (err) in
                 if let err = err{
@@ -122,7 +126,11 @@ class SignUpViewController: UIViewController {
                 }
                 print("ユーザー情報の保存に成功しました")
                 HUD.hide()
-                self.dismiss(animated: true, completion: nil)
+                let storyboard = UIStoryboard(name: "Hobby", bundle: nil)
+                
+                let hobbyVC = storyboard.instantiateViewController(withIdentifier: "HobbyViewController") as! HobbyViewController
+                hobbyVC.uid = self.uid
+                self.navigationController?.pushViewController(hobbyVC, animated: true)
             }
         }
     }
